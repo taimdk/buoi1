@@ -1,46 +1,35 @@
-package Cau1b;
+package Cau2;
+
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
- public static void main(String[] args) {
-        DanhSachHangThucPham ds = new DanhSachHangThucPham();
+
+    public static void main(String[] agrs) {
+        LopHocPhan lhp = new LopHocPhan();
+        DSSinhvien ds=new DSSinhvien();
         Scanner sc = new Scanner(System.in);
-        int menu;
-        do{
-            System.out.println("Lua chon chuc nang");
-            System.out.println("1. Nhap thong tin hang hoa");
-            System.out.println("2. In thong tin hang hoa");
-            System.out.println("0. Thoat");
-            System.out.print("Nhap: "); menu = sc.nextInt();
-            
-            switch(menu){
-                case 1:
-                    ds.nhap();
-                    break;
-                case 2:
-                    ds.in();
-                    break;
-                default:
-                    if(menu !=0){
-                        System.out.println("Nhap lai");
-                    }else{
-                        System.out.println("Thoat thanh cong");
-                    }
-            }
-        }while(menu !=0);
-    }
 
-    private static class DanhSachHangThucPham {
+        ArrayList<Sinhvien> sv = new ArrayList<Sinhvien>();
 
-        public DanhSachHangThucPham() {
-        }
+        System.out.println("Nhap ma lop:");
+        String maLHP = sc.nextLine();
 
-        private void nhap() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
+        System.out.println("Nhap ten lop hoc:");
+        String tenLHP = sc.nextLine();
 
-        private void in() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
+        System.out.println("Nhap ten giao vien:");
+        String tenGV = sc.nextLine();
+
+        System.out.println("Nhap thong tin buoi hoc:");
+        String thongTinLopHoc = sc.nextLine();
+
+        System.out.println("maLH" + maLHP);
+        System.out.println("ten lop:" + tenLHP);
+        System.out.println("ten giao vien " + tenGV);
+        System.out.println("thong tin buoi hoc " + thongTinLopHoc);
+        System.out.println("danh sach sinh vien");
+        System.out.println("Tong sinh vien: " + ds.getSoLuongSV());
+
     }
 }
